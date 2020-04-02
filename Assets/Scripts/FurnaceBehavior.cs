@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class FurnaceBehavior : MonoBehaviour {
 
+    AudioSource metalBang;
+
 	void Start () {
-		
+        metalBang = GetComponent<AudioSource>();
 	}
 	
 	void Update () {
@@ -15,5 +17,6 @@ public class FurnaceBehavior : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Hit");
+        metalBang.Play();
     }
 }

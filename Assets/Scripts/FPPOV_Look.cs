@@ -24,11 +24,11 @@ public class FPPOV_Look : MonoBehaviour
         smoothLook.y = Mathf.Lerp(smoothLook.y, mouseDelta.y, 1f / smoothing);
         mouseLook += smoothLook;
 
-        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-        avatar.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, avatar.transform.up);
-
-        //transform.localRotation = Quaternion.AngleAxis(-mouseDelta.y, Vector3.right);
-        //avatar.transform.localRotation = Quaternion.AngleAxis(mouseDelta.x, avatar.transform.up);
+        if (-mouseLook.y < 85 && -mouseLook.y > -85)
+        { 
+            transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        }
+            avatar.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, avatar.transform.up);
 
     }
 }
