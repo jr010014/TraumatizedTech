@@ -62,10 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FirstPersion AIO Pack\DemoScene\MiscScripts\Doors.cs" />
+    <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
     <Compile Include="Assets\Scripts\FPPOV_Look.cs" />
     <Compile Include="Assets\Scripts\FPPOV_Move.cs" />
     <Compile Include="Assets\Scripts\FurnaceBehavior.cs" />
     <Compile Include="Assets\Scripts\ThermostatBehavior.cs" />
+    <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />
+    <None Include="Assets\FirstPersion AIO Pack\README.txt" />
     <None Include="Assets\WorldMaterialsFree\WorldMatFree.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Documents/GitHub/TraumatizedTech/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
