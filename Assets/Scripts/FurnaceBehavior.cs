@@ -14,9 +14,12 @@ public class FurnaceBehavior : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collider)
     {
-        Debug.Log("Hit");
-        metalBang.Play();
+        if (collider.gameObject.tag == "Player")
+        {
+            Debug.Log("Hit");
+            metalBang.Play();
+        }
     }
 }
