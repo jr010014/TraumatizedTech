@@ -831,7 +831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigHand: {fileID: 884580627}
   littleHand: {fileID: 1535700193}
-  Pendulum: {fileID: 762279376}
+  pendulum: {fileID: 762279376}
 --- !u!1 &762279376
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,14 +855,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762279376}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0009999127, y: 3.1359997, z: -0.10299994}
+  m_LocalRotation: {x: 0.027760854, y: -0.7065616, z: 0.027760854, w: 0.7065616}
+  m_LocalPosition: {x: -0.0009999127, y: 3.1359997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3905429321714816996}
   m_Father: {fileID: 5006512735867711096}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.5, y: -90.00001, z: 0}
 --- !u!1 &865757173
 GameObject:
   m_ObjectHideFlags: 0
