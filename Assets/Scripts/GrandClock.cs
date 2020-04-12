@@ -7,63 +7,36 @@ public class GrandClock : MonoBehaviour
     public GameObject bigHand;
     public GameObject littleHand;
     public GameObject pendulum;
+    bool pendSwing;
+    int pendulumSpeed = 60;
 
 
     private void Update()
     {
         littleHand.transform.Rotate(new Vector3(360f, 0f, 0f) * Time.deltaTime);
         bigHand.transform.Rotate(new Vector3(30f, 0f, 0f) * Time.deltaTime);
-        if (Mathf.Abs(pendulum.transform.eulerAngles.x) > 4)
-        {
-            pendulumSwing();
-        }
-
+        pendulumSwing();
     }
 
     public void pendulumSwing()
     {
-        if (pendulum.transform.eulerAngles.x >= 4)
+        if (pendulum.transform.eulerAngles.x < 180 && pendulum.transform.eulerAngles.x  >= 4 && pendSwing != true)
         {
-            pendulum.transform.Rotate(new Vector3(-6f, 0f, 0f) * Time.deltaTime);
-
+            pendSwing = true;
         }
-        else if (pendulum.transform.eulerAngles.x < -4)
+        else if (pendulum.transform.eulerAngles.x > 180 && pendulum.transform.eulerAngles.x - 360 <= -4 && pendSwing != false)
         {
-            pendulum.transform.Rotate(new Vector3(6f, 0f, 0f) * Time.deltaTime);
+            pendSwing = false;
+        }
+
+        if(pendSwing == true)
+        {
+            pendulum.transform.Rotate(new Vector3(-pendulumSpeed, 0f, 0f) * Time.deltaTime);
+        }
+        else if(pendSwing == false)
+        {
+            pendulum.transform.Rotate(new Vector3(pendulumSpeed, 0f, 0f) * Time.deltaTime);
         }
     }
 
-        /*
-       public GameObject bigHand;
-       public GameObject littleHand;
-       public GameObject Pendulum;
-       string oldSeconds;
-
-       void Update()
-       {
-           string seconds = System.DateTime.UtcNow.ToString("ss");
-
-          if(seconds != oldSeconds)
-          {
-            UpdateTimer();
-          }
-          oldSeconds = seconds;
-       }
-
-       void UpdateTimer()
-       {
-           int secondsInt = int.Parse(System.DateTime.UtcNow.ToString("ss"));
-           int minutesInt = int.Parse(System.DateTime.UtcNow.ToString("mm"));
-           int hoursInt = int.Parse(System.DateTime.UtcNow.ToString("hh"));
-
-
-           print(secondsInt);
-           print(minutesInt);
-           print(hoursInt);
-
-           iTween.RotateTo(littleHand, iTween.Hash("x", secondsInt * 6 * -1, "time", 1, "easetype", "easeOutQuint"));
-           iTween.RotateTo(bigHand, iTween.Hash("x", minutesInt * 6 * -1, "time", 1, "easetype", "easeOutQuint"));
-
-       }
-       */
-    }
+}

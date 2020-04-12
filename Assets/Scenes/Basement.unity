@@ -289,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
         type: 3}
       propertyPath: autoCrosshair
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
         type: 3}
@@ -305,7 +305,7 @@ PrefabInstance:
     - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
         type: 3}
       propertyPath: sprintSpeed
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
         type: 3}
@@ -613,7 +613,17 @@ PrefabInstance:
     - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
         type: 3}
       propertyPath: drawStaminaMeter
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+        type: 3}
+      propertyPath: headbobFrequency
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
@@ -855,14 +865,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762279376}
-  m_LocalRotation: {x: 0.027760854, y: -0.7065616, z: 0.027760854, w: 0.7065616}
+  m_LocalRotation: {x: 0.02467767, y: -0.70667607, z: 0.02467767, w: 0.70667607}
   m_LocalPosition: {x: -0.0009999127, y: 3.1359997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3905429321714816996}
   m_Father: {fileID: 5006512735867711096}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 4.5, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 4, y: -90.00001, z: 0}
 --- !u!1 &865757173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,7 +1991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172668131728491}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.45, y: 4.78, z: 7.16}
+  m_LocalPosition: {x: -3.45, y: 4.644, z: 7.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7585962979515000602}
