@@ -25,9 +25,19 @@ public class DetermineHeartbeat : MonoBehaviour
         //evaluate distance between player and objects that induce heartbeat
         if ( Vector3.Distance(collider.transform.position, gameObject.transform.position) < 2f)
         {
-            //if close enough, induce heartbeat
-            
-            heartbeat.Play();
+            if(collider.gameObject.tag == "grandClock")
+            {
+                //if close enough to clock, induce heartbeat
+                heartbeat.Play();
+                Debug.Log("heartbeat");
+            }
+            if (collider.gameObject.tag == "furnace")
+            {
+                //if close enough to furnace, induce breathing
+                //heartbeat.Play();
+                Debug.Log("breathing");
+            }
+
         }
         
     }
