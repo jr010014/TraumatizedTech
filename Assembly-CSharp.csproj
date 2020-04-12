@@ -67,10 +67,12 @@
     <Compile Include="Assets\Scripts\FPPOV_Look.cs" />
     <Compile Include="Assets\Scripts\FPPOV_Move.cs" />
     <Compile Include="Assets\Scripts\FurnaceBehavior.cs" />
+    <Compile Include="Assets\Scripts\GrandClock.cs" />
     <Compile Include="Assets\Scripts\ThermostatBehavior.cs" />
     <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />
     <None Include="Assets\WorldMaterialsFree\WorldMatFree.shader" />
+    <None Include="Assets\Hand Painted Seamless Wood Texture\Documentation\Documentation.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Documents/GitHub/TraumatizedTech/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -665,6 +667,12 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.7f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{F40B9508-3F52-1E0E-DFD6-59F82849167F}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
