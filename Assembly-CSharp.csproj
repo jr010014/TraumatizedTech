@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\FirstPersion AIO Pack\DemoScene\MiscScripts\Doors.cs" />
     <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
+    <Compile Include="Assets\Scripts\DetermineHeartbeat.cs" />
     <Compile Include="Assets\Scripts\FPPOV_Look.cs" />
     <Compile Include="Assets\Scripts\FPPOV_Move.cs" />
     <Compile Include="Assets\Scripts\FurnaceBehavior.cs" />
