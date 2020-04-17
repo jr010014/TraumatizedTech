@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ThermostatBehavior : MonoBehaviour
 {
-    public Light furnaceRoomLight;
     void Start()
     {
         GetComponent<Renderer>().material.color = Color.blue;
@@ -18,7 +17,6 @@ public class ThermostatBehavior : MonoBehaviour
     void OnCollisionEnter (Collision collision)
     {
         GetComponent<Renderer>().material.color = Color.red;
-        furnaceRoomLight.color = Color.red;
     }
 
 }
