@@ -71,9 +71,18 @@
     <Compile Include="Assets\Scripts\GrandClock.cs" />
     <Compile Include="Assets\Scripts\HVACBehavior.cs" />
     <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\ScratchedWood.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />
     <None Include="Assets\WorldMaterialsFree\WorldMatFree.shader" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\PaintedWall.shader" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\Stone Tile.shader" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\Lino.shader" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\Processed Leather.shader" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\Cloth.shader" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\Carpet.shader" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\Concrete Wall.shader" />
     <None Include="Assets\Hand Painted Seamless Wood Texture\Documentation\Documentation.txt" />
+    <None Include="Assets\Nice Materials Pack 2\Shaders\Stained Leather.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Documents/GitHub/TraumatizedTech/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
