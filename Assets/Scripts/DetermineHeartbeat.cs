@@ -23,7 +23,7 @@ public class DetermineHeartbeat : MonoBehaviour
     public void OnCollisionEnter(Collision collider)
     {
         //evaluate distance between player and objects that induce heartbeat
-        if ( Vector3.Distance(collider.transform.position, gameObject.transform.position) < 2f)
+        if ( Vector3.Distance(collider.transform.position, gameObject.transform.position) < 3f)
         {
             if(collider.gameObject.tag == "grandClock")
             {

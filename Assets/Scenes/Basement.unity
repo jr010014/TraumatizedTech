@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ecadd83f09af84c9c1b920b86aa71d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnaceRoomLight: {fileID: 0}
+  environmentLight: {fileID: 803114740}
 --- !u!1 &365454500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1743903104223250, guid: 2e62f5703e5f8d2488a5e1bc8433be41,

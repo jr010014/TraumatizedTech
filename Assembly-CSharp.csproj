@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\FPPOV_Move.cs" />
     <Compile Include="Assets\Scripts\FurnaceBehavior.cs" />
     <Compile Include="Assets\Scripts\GrandClock.cs" />
-    <Compile Include="Assets\Scripts\ThermostatBehavior.cs" />
+    <Compile Include="Assets\Scripts\HVACBehavior.cs" />
     <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />
     <None Include="Assets\WorldMaterialsFree\WorldMatFree.shader" />
