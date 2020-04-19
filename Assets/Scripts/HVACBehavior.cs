@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class HVACBehavior : MonoBehaviour
 {
-    public Light environmentLight;
+    public bool thermoStatus; //1 or true = blue, 0 or false = red
 
     void Start()
     {
         GetComponent<Renderer>().material.color = Color.red;
+        thermoStatus = false;
     }
 
     void Update()
@@ -16,10 +17,10 @@ public class HVACBehavior : MonoBehaviour
         
     }
 
-    void OnCollisionEnter (Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
+        thermoStatus = true;
         GetComponent<Renderer>().material.color = Color.blue;
-        environmentLight.color = Color.blue;
     }
 
 }

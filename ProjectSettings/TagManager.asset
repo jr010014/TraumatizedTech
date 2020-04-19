@@ -6,6 +6,7 @@ TagManager:
   tags:
   - grandClock
   - furnace
+  - thermostat
   layers:
   - Default
   - TransparentFX

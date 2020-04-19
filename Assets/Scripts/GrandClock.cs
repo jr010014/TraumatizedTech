@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class GrandClock : MonoBehaviour
 {
+    //This class controls motion of hands on clock
+
+
     public GameObject bigHand;
     public GameObject littleHand;
     public GameObject pendulum;
     bool pendSwing;
     int pendulumSpeed = 60;
 
-
+   
     private void Update()
     {
         littleHand.transform.Rotate(new Vector3(360f, 0f, 0f) * Time.deltaTime);
