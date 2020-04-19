@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\GrandClock.cs" />
     <Compile Include="Assets\Scripts\GrandClockShell.cs" />
     <Compile Include="Assets\Scripts\HVACBehavior.cs" />
+    <Compile Include="Assets\Scripts\Respawn.cs" />
     <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />
     <None Include="Assets\Nice Materials Pack 2\Shaders\ScratchedWood.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />
