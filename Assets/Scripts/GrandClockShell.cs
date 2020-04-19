@@ -36,9 +36,11 @@ public class GrandClockShell : MonoBehaviour
 
     public void OnCollisionEnter(Collision collider)
     {
-        Debug.Log("collide");
-        if (Vector3.Distance(collider.transform.position, gameObject.transform.position) < 3f)
+        if(GetComponent<ThermoStatInfo>().thermoTemp == 0)
         {
+            //Debug.Log("collide");
+            //if (Vector3.Distance(collider.transform.position, gameObject.transform.position) < 3f)
+            //{
             if (collider.gameObject.tag == "Player")
             {
                 //if close enough to clock, induce heartbeat
@@ -47,13 +49,15 @@ public class GrandClockShell : MonoBehaviour
                 GetComponent<Renderer>().material = skirtPainting;
 
                 //if (status == true)
-               // {
+                // {
                 //    Debug.Log("chnagetoskirt");
-               //    GetComponent<Renderer>().material = skirtPainting;
-               // }
+                //    GetComponent<Renderer>().material = skirtPainting;
+                // }
             }
 
+            //}
         }
+
     }
 
 
