@@ -5,6 +5,8 @@ using UnityEngine;
 public class Environment : MonoBehaviour
 {
     public GameObject skyBoxShell;
+    public GameObject thermoStat;
+    public GameObject houseStruct;
 
     void Start()
     {
@@ -14,11 +16,16 @@ public class Environment : MonoBehaviour
 
     void Update()
     {
-        /*if (GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
         {
             skyBoxShell.SetActive(true);
 
+            foreach(Transform houseStructChild in houseStruct.transform)
+            {
+                houseStructChild.GetComponent<Renderer>().material = null;
+            }
+
         }
-        */
+        
     }
 }

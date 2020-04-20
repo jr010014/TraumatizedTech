@@ -4,19 +4,7 @@ using UnityEngine;
 
 public class ThermoStatInfo : MonoBehaviour
 {
-    public int thermoTemp { get; set; }    //0 to 5,0 being cold, 5 being hot
-    //https://stackoverflow.com/questions/23416458/object-reference-not-set-to-an-instance-of-an-object-error-when-trying-to-add
-    
-    /*public int getthermoTemp()
-    {
-        return thermoTemp;
-    }
-
-    public void setthermoTemp(int newthermoTemp)
-    {
-        thermoTemp = newthermoTemp;
-    }
-    */
+    public int thermoTemp;    //0 to 5,0 being cold, 5 being hot
 
     public void Awake()
     {

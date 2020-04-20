@@ -1889,6 +1889,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170449801}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1394478576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7196435332201517409, guid: dffb406a806df4a4080c678caf3e6ee0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1224753527446630814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1480275253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2039,6 +2045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyBoxShell: {fileID: 373192526}
+  thermoStat: {fileID: 184654389}
+  houseStruct: {fileID: 1394478576}
 --- !u!4 &1615217856
 Transform:
   m_ObjectHideFlags: 0
