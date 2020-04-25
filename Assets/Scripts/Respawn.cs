@@ -6,9 +6,14 @@ public class Respawn : MonoBehaviour
 {
    
     public Vector3[] spawnPointsArray;  //1D array of spawn points
+    public GameObject thermoStat;
+    public Material feetPainting;
+    public bool materialSet; //determines if feetPainting has been set as new material for floors
 
     private void Awake()
     {
+        materialSet = false;
+
         spawnPointsArray = new Vector3[5]; //defining size of spawnPointsArray
 
         spawnPointsArray[0] = new Vector3(8.95f, 3.12f, 12.58f); //Living Room
@@ -25,8 +30,17 @@ public class Respawn : MonoBehaviour
     {
        if(gameObject.transform.position.y <= -200)
        {
-           gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in of the 5 assigned placed, ramdomly
-           Debug.Log(Random.Range(0, 6));
+          if (materialSet == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+          {
+                foreach (GameObject floor in GameObject.FindGameObjectsWithTag("floor"))
+                {
+                    floor.GetComponent<Renderer>().material = feetPainting;
+                }
+                materialSet = true;
+          }
+
+          gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in of the 5 assigned placed, ramdomly
+          Debug.Log(Random.Range(0, 6));
        }
        
     }

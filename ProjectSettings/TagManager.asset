@@ -7,6 +7,9 @@ TagManager:
   - grandClock
   - furnace
   - thermostat
+  - wall
+  - floor
+  - time
   layers:
   - Default
   - TransparentFX

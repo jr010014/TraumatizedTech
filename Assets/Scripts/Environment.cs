@@ -8,15 +8,18 @@ public class Environment : MonoBehaviour
     public GameObject thermoStat;
     public GameObject houseStruct;
 
+    public bool materialsSet;
+
     void Start()
     {
         //skyBoxShell.GetComponent<MeshRenderer>().enabled = false;
+        materialsSet = false;
         skyBoxShell.SetActive(false);
     }
 
     void Update()
     {
-        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        if (materialsSet == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
         {
             skyBoxShell.SetActive(true);
 
@@ -24,6 +27,8 @@ public class Environment : MonoBehaviour
             {
                 houseStructChild.GetComponent<Renderer>().material = null;
             }
+
+            materialsSet = true;
 
         }
         

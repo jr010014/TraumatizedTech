@@ -5,20 +5,55 @@ using UnityEngine;
 public class GrandClock : MonoBehaviour
 {
     //This class controls motion of hands on clock
-
+    //As well as changes in when "trauma" occurs
 
     public GameObject bigHand;
     public GameObject littleHand;
     public GameObject pendulum;
     bool pendSwing;
-    int pendulumSpeed = 60;
+    int pendulumSpeed;
+    float littleHandRotSpeed;
+    float bigHandRotSpeed;
 
-   
+    public GameObject thermoStat;
+    public Material skirtPainting;
+    public Material whiteWood;
+    public bool traumaOnset;
+    public GameObject player;
+
+    public void Start()
+    {
+        pendulumSpeed = 60;
+        littleHandRotSpeed = 360f;
+        bigHandRotSpeed = 30f;
+        traumaOnset = false;
+    }
+
+
     private void Update()
     {
-        littleHand.transform.Rotate(new Vector3(360f, 0f, 0f) * Time.deltaTime);
-        bigHand.transform.Rotate(new Vector3(30f, 0f, 0f) * Time.deltaTime);
+        littleHand.transform.Rotate(new Vector3(littleHandRotSpeed, 0f, 0f) * Time.deltaTime);
+        bigHand.transform.Rotate(new Vector3(bigHandRotSpeed, 0f, 0f) * Time.deltaTime);
         pendulumSwing();
+
+
+        if (traumaOnset == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        {
+            foreach (GameObject element in GameObject.FindGameObjectsWithTag("time"))
+            {
+                element.GetComponent<Renderer>().material = skirtPainting;
+            }
+            GameObject.FindGameObjectWithTag("grandClock").GetComponent<Renderer>().material = whiteWood;
+
+            pendulumSpeed = 6;
+            littleHandRotSpeed = 36f;
+            bigHandRotSpeed = 3f;
+
+            clockPlayerChanges();
+
+            traumaOnset = true;
+        }
+
     }
 
     public void pendulumSwing()
@@ -40,6 +75,15 @@ public class GrandClock : MonoBehaviour
         {
             pendulum.transform.Rotate(new Vector3(pendulumSpeed, 0f, 0f) * Time.deltaTime);
         }
+    }
+
+    public void clockPlayerChanges()
+    {
+        player.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
+        player.GetComponent<FirstPersonAIO>().canJump = false;
+        player.GetComponent<FirstPersonAIO>().sprintSpeed = 0f;
+        player.GetComponent<FirstPersonAIO>().verticalRotationRange = 90f;
+
     }
 
 }
