@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 879, y: 492}
-  m_MaxSize: {x: 16004, y: 14042}
+  m_MinSize: {x: 880, y: 492}
+  m_MaxSize: {x: 16005, y: 14042}
   vertical: 0
-  controlID: 269
+  controlID: 2757
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 604, y: 492}
   m_MaxSize: {x: 12004, y: 14042}
   vertical: 1
-  controlID: 270
+  controlID: 2795
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 604, y: 221}
   m_MaxSize: {x: 12004, y: 4021}
   vertical: 0
-  controlID: 271
+  controlID: 2796
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 201
     height: 648
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -371,14 +371,14 @@ MonoBehaviour:
       width: 443
       height: 606
     m_Scale: {x: 1.2298737, y: 1.2298737}
-    m_Translation: {x: 268.23273, y: 303}
+    m_Translation: {x: 252.7782, y: 303}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -218.0978
+      x: -205.53185
       y: -246.36678
       width: 360.19962
       height: 492.73355
@@ -419,8 +419,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
+      m_SelectedIDs: 62360000
+      m_LastClickedID: 13922
       m_ExpandedIDs: 6cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -621,11 +621,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.010513021, y: 0.83058226, z: -0.015005916, w: -0.5574544}
     speed: 2
-    m_Value: {x: -0.011293872, y: 0.831829, z: -0.016278686, w: -0.55467826}
+    m_Value: {x: -0.010507989, y: 0.8301847, z: -0.014998734, w: -0.5571876}
   m_Size:
     m_Target: 5.977507
     speed: 2
-    m_Value: 6.2775073
+    m_Value: 5.977507
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -689,19 +689,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Documents\GitHub\TraumatizedTech
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 66}
-    m_SelectedIDs: 8a3f0000
-    m_LastClickedID: 16266
+    m_SelectedIDs: 04400000
+    m_LastClickedID: 16388
     m_ExpandedIDs: 000000008a3f00008c3f00008e3f0000903f0000923f0000943f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

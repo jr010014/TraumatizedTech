@@ -10,6 +10,8 @@ public class Respawn : MonoBehaviour
     public Material feetPainting;
     public bool materialSet; //determines if feetPainting has been set as new material for floors
 
+
+
     private void Awake()
     {
         materialSet = false;
@@ -28,21 +30,28 @@ public class Respawn : MonoBehaviour
     }
     void Update()
     {
-       if(gameObject.transform.position.y <= -200)
+       if(gameObject.transform.position.y <= -200)      //if player falls off the edge
        {
-          if (materialSet == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+          if (materialSet == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)        //if player discovered the "thermostat"/HeartOnAstickPainting
           {
                 foreach (GameObject floor in GameObject.FindGameObjectsWithTag("floor"))
                 {
                     floor.GetComponent<Renderer>().material = feetPainting;
                 }
+
+                //reconfigure player controls style
+                gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
+                gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 35f;
+
                 materialSet = true;
           }
 
           gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in of the 5 assigned placed, ramdomly
-          Debug.Log(Random.Range(0, 6));
-       }
+
+        }
        
     }
+
+    //public void check
     
 }

@@ -79,10 +79,10 @@ public class GrandClock : MonoBehaviour
 
     public void clockPlayerChanges()
     {
-        player.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
+        player.GetComponent<FirstPersonAIO>().walkSpeed = 10.0f;
         player.GetComponent<FirstPersonAIO>().canJump = false;
-        player.GetComponent<FirstPersonAIO>().sprintSpeed = 0f;
-        player.GetComponent<FirstPersonAIO>().verticalRotationRange = 90f;
+        player.GetComponent<FirstPersonAIO>().sprintSpeed = 1.0f;
+        player.GetComponent<FirstPersonAIO>().verticalRotationRange = 120f;
 
     }
 
