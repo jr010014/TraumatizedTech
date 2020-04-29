@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-   
+
     public Vector3[] spawnPointsArray;  //1D array of spawn points
     public GameObject thermoStat;
     public Material feetPainting;
-    public bool materialSet; //determines if feetPainting has been set as new material for floors
+    public bool drugOnset; //determines if feetPainting has been set as new material for floors
+    public bool seizureOnset;
 
 
 
     private void Awake()
     {
-        materialSet = false;
+        drugOnset = false;        //upon start of play, trauma did not occur
+        seizureOnset = false;   //seizure has not yet occured
 
         spawnPointsArray = new Vector3[5]; //defining size of spawnPointsArray
 
+        //defining spawn points
         spawnPointsArray[0] = new Vector3(8.95f, 3.12f, 12.58f); //Living Room
         spawnPointsArray[1] = new Vector3(92.21f, 0f, -26.17f); //Drivewayy end
         spawnPointsArray[2] = new Vector3(4.11f, 0f, -50.42f);  //Shop
@@ -30,10 +33,23 @@ public class Respawn : MonoBehaviour
     }
     void Update()
     {
-       if(gameObject.transform.position.y <= -200)      //if player falls off the edge
-       {
-          if (materialSet == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)        //if player discovered the "thermostat"/HeartOnAstickPainting
-          {
+        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)        //if player discovered the "thermostat"/HeartOnAstickPainting (managed in ThermoStatInfo Class)
+        {
+            seizureOnset = true;
+        }
+
+        checkConfig();  //check to see where state of trauma is and execute certain actions depending on this state before respawning
+
+
+    }
+
+    //checks for trauma events and if they have occured. depedning on if they have occured or not, will reconfigure certain settings
+    public void checkConfig()
+    {
+        if (gameObject.transform.position.y <= -200)      //if player falls off the edge
+        {
+            if (drugOnset == false && seizureOnset == true)        //if player discovered the "thermostat"/HeartOnAstickPainting/fireplace (managed in ThermoStatInfo Class)
+            {
                 foreach (GameObject floor in GameObject.FindGameObjectsWithTag("floor"))
                 {
                     floor.GetComponent<Renderer>().material = feetPainting;
@@ -43,15 +59,17 @@ public class Respawn : MonoBehaviour
                 gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
                 gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 35f;
 
-                materialSet = true;
-          }
-
-          gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in of the 5 assigned placed, ramdomly
-
+                drugOnset = true;
+            }
+            gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in one of the 5 assigned places, randomly
         }
-       
+
+        if (seizureOnset == true)
+        {
+            gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 10.0f;
+            gameObject.GetComponent<FirstPersonAIO>().sprintSpeed = 1.0f;
+            gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 120f;
+        }
+}
     }
 
-    //public void check
-    
-}

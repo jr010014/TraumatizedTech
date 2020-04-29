@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7995e107d150561428b67da4f6ae2fb9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - thermoStat: {fileID: 6522181298393106025, guid: 3eec940c5ba386744a17e45e7da1f7da,
+      type: 3}
+  - seizurePainting: {fileID: 2100000, guid: 1f758844c107486449b938adc18713f0, type: 2}
+  - seizureOnset: {fileID: 1743903104223250, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

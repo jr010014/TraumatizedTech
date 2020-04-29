@@ -19,7 +19,7 @@ public class GrandClock : MonoBehaviour
     public Material skirtPainting;
     public Material whiteWood;
     public bool traumaOnset;
-    public GameObject player;
+    //public GameObject player;
 
     public void Start()
     {
@@ -49,7 +49,7 @@ public class GrandClock : MonoBehaviour
             littleHandRotSpeed = 36f;
             bigHandRotSpeed = 3f;
 
-            clockPlayerChanges();
+            //clockPlayerChanges();
 
             traumaOnset = true;
         }
@@ -77,13 +77,13 @@ public class GrandClock : MonoBehaviour
         }
     }
 
-    public void clockPlayerChanges()
+    /*public void clockPlayerChanges()
     {
         player.GetComponent<FirstPersonAIO>().walkSpeed = 10.0f;
-        player.GetComponent<FirstPersonAIO>().canJump = false;
         player.GetComponent<FirstPersonAIO>().sprintSpeed = 1.0f;
         player.GetComponent<FirstPersonAIO>().verticalRotationRange = 120f;
 
     }
+    */
 
 }

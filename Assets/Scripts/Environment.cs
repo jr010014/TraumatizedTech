@@ -12,7 +12,6 @@ public class Environment : MonoBehaviour
 
     void Start()
     {
-        //skyBoxShell.GetComponent<MeshRenderer>().enabled = false;
         materialsSet = false;
         skyBoxShell.SetActive(false);
     }

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GrandClock.cs" />
     <Compile Include="Assets\Scripts\GrandClockShell.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />
+    <Compile Include="Assets\Scripts\Seizure.cs" />
     <Compile Include="Assets\Scripts\ThermoStatInfo.cs" />
     <Compile Include="Assets\Scripts\thermoStatBehavior.cs" />
     <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />
