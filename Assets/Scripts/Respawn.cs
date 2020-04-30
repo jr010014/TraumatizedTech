@@ -7,12 +7,18 @@ public class Respawn : MonoBehaviour
 
     public Vector3[] spawnPointsArray;  //1D array of spawn points
     public GameObject thermoStat;
-    public Material feetPainting;
+   
     public bool drugOnset; //determines if feetPainting has been set as new material for floors
     public bool seizureOnset;
+    //public bool fireTouch;
+
     public GameObject earth;
     public GameObject exitBlockers;
+    //public GameObject firePit;
+
+    public Material feetPainting;
     public Material limbsPainting;
+
     public Light clockSpot;
     public Light environmentLight;
 
@@ -22,6 +28,7 @@ public class Respawn : MonoBehaviour
     {
         drugOnset = false;        //upon start of play, trauma did not occur
         seizureOnset = false;   //seizure has not yet occured
+        //fireTouch = false;
 
         spawnPointsArray = new Vector3[5]; //defining size of spawnPointsArray
 
@@ -81,6 +88,8 @@ public class Respawn : MonoBehaviour
         {
             exitBlockers.SetActive(true);   
             clockSpot.enabled = true;
+            environmentLight.color = new Color32(0, 0, 0, 0);
+            //earth.GetComponent<MeshCollider>().enabled = false;
 
             gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 10.0f;
             gameObject.GetComponent<FirstPersonAIO>().sprintSpeed = 1.0f;
@@ -92,8 +101,8 @@ public class Respawn : MonoBehaviour
         if(thermoStat.GetComponent<ThermoStatInfo>().thermoTemp >= 1)   //this occurs if they find the clock/skirt during the seizure
         {
             exitBlockers.SetActive(false);
-            environmentLight.color = new Color32(0, 0, 0, 0);
         }
+
     }
     }
 

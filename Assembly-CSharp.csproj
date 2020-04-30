@@ -65,6 +65,7 @@
     <Compile Include="Assets\FirstPersion AIO Pack\DemoScene\MiscScripts\Doors.cs" />
     <Compile Include="Assets\FirstPersion AIO Pack\FirstPersonAIO\FirstPersonAIO.cs" />
     <Compile Include="Assets\Scripts\Environment.cs" />
+    <Compile Include="Assets\Scripts\FireBehavior.cs" />
     <Compile Include="Assets\Scripts\FurnaceBehavior.cs" />
     <Compile Include="Assets\Scripts\GrandClock.cs" />
     <Compile Include="Assets\Scripts\GrandClockShell.cs" />
