@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Seizure.cs" />
     <Compile Include="Assets\Scripts\ThermoStatInfo.cs" />
     <Compile Include="Assets\Scripts\thermoStatBehavior.cs" />
+    <None Include="Assets\Bed &amp; Bath Furniture Pack\Documentation.txt" />
     <None Include="Assets\FirstPersion AIO Pack\DemoScene\Working Materials\GlassBumpedDistort.shader" />
     <None Include="Assets\Nice Materials Pack 2\Shaders\ScratchedWood.shader" />
     <None Include="Assets\FirstPersion AIO Pack\README.txt" />

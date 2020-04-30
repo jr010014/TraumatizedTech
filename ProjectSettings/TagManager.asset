@@ -10,6 +10,8 @@ TagManager:
   - wall
   - floor
   - time
+  - earth
+  - limbs
   layers:
   - Default
   - TransparentFX

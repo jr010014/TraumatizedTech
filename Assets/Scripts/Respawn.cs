@@ -10,6 +10,11 @@ public class Respawn : MonoBehaviour
     public Material feetPainting;
     public bool drugOnset; //determines if feetPainting has been set as new material for floors
     public bool seizureOnset;
+    public GameObject earth;
+    public GameObject exitBlockers;
+    public Material limbsPainting;
+    public Light clockSpot;
+    public Light environmentLight;
 
 
 
@@ -55,21 +60,40 @@ public class Respawn : MonoBehaviour
                     floor.GetComponent<Renderer>().material = feetPainting;
                 }
 
+                earth.GetComponent<MeshCollider>().enabled = true;
+
                 //reconfigure player controls style
                 gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
                 gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 35f;
 
+                foreach (GameObject wall in GameObject.FindGameObjectsWithTag("limbs")) //MOVE LATER
+                {
+                    wall.GetComponent<Renderer>().material = limbsPainting;
+                }
+
                 drugOnset = true;
             }
+
             gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in one of the 5 assigned places, randomly
         }
 
         if (seizureOnset == true)
         {
+            exitBlockers.SetActive(true);   
+            clockSpot.enabled = true;
+
             gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 10.0f;
             gameObject.GetComponent<FirstPersonAIO>().sprintSpeed = 1.0f;
             gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 120f;
+            gameObject.GetComponent<FirstPersonAIO>().jumpPower = 8.0f;
+
         }
-}
+
+        if(thermoStat.GetComponent<ThermoStatInfo>().thermoTemp >= 1)   //this occurs if they find the clock/skirt during the seizure
+        {
+            exitBlockers.SetActive(false);
+            environmentLight.color = new Color32(0, 0, 0, 0);
+        }
+    }
     }
 

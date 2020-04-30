@@ -36,6 +36,8 @@ public class GrandClockShell : MonoBehaviour
                 heartbeat.Play();
                 Debug.Log("heartbeat");
 
+                thermoStat.GetComponent<ThermoStatInfo>().thermoTemp = 1;       //finding clock/skirt during seizure increases your temp, brings life back to you
+
             }
         }
     

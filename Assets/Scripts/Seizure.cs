@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Seizure : MonoBehaviour
 {
+    //THIS SCRIPT SHOULD BE APPLIED TO ALL UNTAGGED OBJECTS
+
     public GameObject thermoStat;
     public Material seizurePainting;
     public GameObject seizureOnset;
