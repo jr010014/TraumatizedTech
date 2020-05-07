@@ -7,7 +7,7 @@ public class ThermoStatInfo : MonoBehaviour
     public int thermoTemp;    //0 to 5,0 being cold, 5 being hot
 
     public Material heart0;
-    //public Material heart1;
+    public Material heart1;
    // public Material heart2;
     //public Material heart3;
     //public Material heart4;
@@ -28,7 +28,7 @@ public class ThermoStatInfo : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material = heart0; ;
                 break;
             case 1:
-                gameObject.GetComponent<Renderer>().material.color = new Color32(95,3,255,0);
+                gameObject.GetComponent<Renderer>().material = heart1;
                 break;
             case 2:
                 gameObject.GetComponent<Renderer>().material.color = new Color32(120,3,255,0);

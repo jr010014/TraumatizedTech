@@ -5,12 +5,6 @@ using UnityEngine;
 public class FireBehavior : MonoBehaviour
 {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnCollisionEnter(Collision collider)
     {
         if (collider.gameObject.tag == "Player")

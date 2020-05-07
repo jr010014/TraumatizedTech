@@ -8,7 +8,7 @@ public class Respawn : MonoBehaviour
     public Vector3[] spawnPointsArray;  //1D array of spawn points
     public GameObject thermoStat;
    
-    public bool drugOnset; //determines if feetPainting has been set as new material for floors
+    public bool escapeOnset; //determines if feetPainting has been set as new material for floors
     public bool seizureOnset;
     //public bool fireTouch;
 
@@ -19,14 +19,13 @@ public class Respawn : MonoBehaviour
     public Material feetPainting;
     public Material limbsPainting;
 
-    public Light clockSpot;
     public Light environmentLight;
 
 
 
     private void Awake()
     {
-        drugOnset = false;        //upon start of play, trauma did not occur
+        escapeOnset = false;        //upon start of play, trauma did not occur
         seizureOnset = false;   //seizure has not yet occured
         //fireTouch = false;
 
@@ -58,27 +57,29 @@ public class Respawn : MonoBehaviour
     //checks for trauma events and if they have occured. depedning on if they have occured or not, will reconfigure certain settings
     public void checkConfig()
     {
-        if (gameObject.transform.position.y <= -200)      //if player falls off the edge
+        if (gameObject.transform.position.y <= -200 && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 1)      //if player falls off the edge
         {
-            if (drugOnset == false && seizureOnset == true)        //if player discovered the "thermostat"/HeartOnAstickPainting/fireplace (managed in ThermoStatInfo Class)
+            if (escapeOnset == false && seizureOnset == true)        //if player discovered the "thermostat"/HeartOnAstickPainting/fireplace (managed in ThermoStatInfo Class)
             {
-                foreach (GameObject floor in GameObject.FindGameObjectsWithTag("floor"))
+                /*foreach (GameObject floor in GameObject.FindGameObjectsWithTag("floor"))
                 {
                     floor.GetComponent<Renderer>().material = feetPainting;
                 }
 
-                earth.GetComponent<MeshCollider>().enabled = true;
-
+                //earth.GetComponent<MeshCollider>().enabled = true;
+*/
                 //reconfigure player controls style
                 gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
                 gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 35f;
+
+                //add feet painting to avatar's feet
 
                 foreach (GameObject wall in GameObject.FindGameObjectsWithTag("limbs")) //MOVE LATER
                 {
                     wall.GetComponent<Renderer>().material = limbsPainting;
                 }
 
-                drugOnset = true;
+                escapeOnset = true;
             }
 
             gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in one of the 5 assigned places, randomly
@@ -87,9 +88,8 @@ public class Respawn : MonoBehaviour
         if (seizureOnset == true)
         {
             exitBlockers.SetActive(true);   
-            clockSpot.enabled = true;
             environmentLight.color = new Color32(0, 0, 0, 0);
-            //earth.GetComponent<MeshCollider>().enabled = false;
+            earth.GetComponent<MeshCollider>().enabled = false;
 
             gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 10.0f;
             gameObject.GetComponent<FirstPersonAIO>().sprintSpeed = 1.0f;

@@ -8,13 +8,12 @@ public class GrandClockShell : MonoBehaviour
 
     AudioSource heartbeat;
     public GameObject thermoStat;
-
+    public Light clockLight;
 
 
     private void Start()
     {
         heartbeat = GetComponent<AudioSource>();
-
 
     }
 
@@ -22,8 +21,13 @@ public class GrandClockShell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        {
+            //if touched tiggerering fireplace/traujma/seizing, then spiritual clock guide calls for you
+            heartbeat.Play();
+            Debug.Log("heartbeat");
+            clockLight.enabled = true;
+        }
     }
 
     public void OnCollisionEnter(Collision collider)
@@ -32,17 +36,11 @@ public class GrandClockShell : MonoBehaviour
         {
             if (collider.gameObject.tag == "Player")
             {
-                //if close enough to clock, induce heartbeat
-                heartbeat.Play();
-                Debug.Log("heartbeat");
-
+                
                 thermoStat.GetComponent<ThermoStatInfo>().thermoTemp = 1;       //finding clock/skirt during seizure increases your temp, brings life back to you
 
             }
         }
-    
-
-
 
     }
 

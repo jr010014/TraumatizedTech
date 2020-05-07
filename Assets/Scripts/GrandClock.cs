@@ -18,15 +18,20 @@ public class GrandClock : MonoBehaviour
     public GameObject thermoStat;
     public Material skirtPainting;
     public Material whiteWood;
-    public bool traumaOnset;
+    public bool changesMade;
     //public GameObject player;
+
+    AudioSource clockChime;
 
     public void Start()
     {
         pendulumSpeed = 60;
         littleHandRotSpeed = 360f;
         bigHandRotSpeed = 30f;
-        traumaOnset = false;
+        changesMade = false;
+
+        clockChime = GetComponent<AudioSource>();
+
     }
 
 
@@ -37,7 +42,7 @@ public class GrandClock : MonoBehaviour
         pendulumSwing();
 
 
-        if (traumaOnset == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        if (changesMade == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
         {
             foreach (GameObject element in GameObject.FindGameObjectsWithTag("time"))
             {
@@ -51,7 +56,12 @@ public class GrandClock : MonoBehaviour
 
             //clockPlayerChanges();
 
-            traumaOnset = true;
+            changesMade = true;
+        }
+
+        if(thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        {
+            clockChime.Play();
         }
 
     }

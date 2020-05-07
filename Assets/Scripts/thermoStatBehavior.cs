@@ -18,6 +18,7 @@ public class thermoStatBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+
         GetComponent<ThermoStatInfo>().thermoTemp = 0;
 
     }
