@@ -8,7 +8,7 @@ public class ThermoStatInfo : MonoBehaviour
 
     public Material heart0;
     public Material heart1;
-   // public Material heart2;
+    public Material heart2;
     //public Material heart3;
     //public Material heart4;
     public Material heart5;
@@ -31,7 +31,7 @@ public class ThermoStatInfo : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material = heart1;
                 break;
             case 2:
-                gameObject.GetComponent<Renderer>().material.color = new Color32(120,3,255,0);
+                gameObject.GetComponent<Renderer>().material = heart2;
                 break;
             case 3:
                 gameObject.GetComponent<Renderer>().material.color = new Color32(255,0,150,0); 

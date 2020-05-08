@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class FireBehavior : MonoBehaviour
 {
+    public bool iAmTheFire; //did the light transfer to the avatar player?
+
+    public void Start()
+    {
+        iAmTheFire = false;
+    }
 
     public void OnCollisionEnter(Collision collider)
     {
         if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("line1");
             transferFire(collider);
         }
     }
@@ -19,5 +24,6 @@ public class FireBehavior : MonoBehaviour
         Debug.Log("line2");
 
         collider.gameObject.GetComponent<Light>().enabled = true;
+        iAmTheFire = true;
     }
 }

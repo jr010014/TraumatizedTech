@@ -21,6 +21,9 @@ public class Respawn : MonoBehaviour
 
     public Light environmentLight;
 
+    public GameObject feet;
+
+
 
 
     private void Awake()
@@ -40,11 +43,10 @@ public class Respawn : MonoBehaviour
 
         gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)]; //spawn/start point is randomly in one of the 5 different position every time
 
-
     }
     void Update()
     {
-        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)        //if player discovered the "thermostat"/HeartOnAstickPainting (managed in ThermoStatInfo Class)
+        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0 && seizureOnset == false)        //if player discovered the "thermostat"/HeartOnAstickPainting (managed in ThermoStatInfo Class)
         {
             seizureOnset = true;
         }
@@ -57,38 +59,49 @@ public class Respawn : MonoBehaviour
     //checks for trauma events and if they have occured. depedning on if they have occured or not, will reconfigure certain settings
     public void checkConfig()
     {
-        if (gameObject.transform.position.y <= -200 && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 1)      //if player falls off the edge
+        if (gameObject.transform.position.y <= -200)      //if player falls off the edge
         {
-            if (escapeOnset == false && seizureOnset == true)        //if player discovered the "thermostat"/HeartOnAstickPainting/fireplace (managed in ThermoStatInfo Class)
+            if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 1)
             {
-                /*foreach (GameObject floor in GameObject.FindGameObjectsWithTag("floor"))
+                if (escapeOnset == false && seizureOnset == true)        //if player discovered the "thermostat"/HeartOnAstickPainting/fireplace (managed in ThermoStatInfo Class)
                 {
-                    floor.GetComponent<Renderer>().material = feetPainting;
+         
+                    gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
+                    gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 35f;
+
+                    feet.SetActive(true);
+
+                    escapeOnset = true;
+                    //earth.GetComponent<MeshCollider>().enabled = true;
+
                 }
-
-                //earth.GetComponent<MeshCollider>().enabled = true;
-*/
-                //reconfigure player controls style
-                gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
-                gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 35f;
-
-                //add feet painting to avatar's feet
-
-                foreach (GameObject wall in GameObject.FindGameObjectsWithTag("limbs")) //MOVE LATER
-                {
-                    wall.GetComponent<Renderer>().material = limbsPainting;
-                }
-
-                escapeOnset = true;
             }
 
             gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in one of the 5 assigned places, randomly
+        }
+
+    
+
+        if (escapeOnset == true)
+        {
+           earth.GetComponent<MeshCollider>().enabled = true;
+
+            thermoStat.GetComponent<ThermoStatInfo>().thermoTemp = 2;
+
+            foreach (GameObject wall in GameObject.FindGameObjectsWithTag("limbs")) //MOVE LATER
+            {
+                wall.GetComponent<Renderer>().material = limbsPainting;
+            }
+            //girls on wall help you regain footing
+            
+
         }
 
         if (seizureOnset == true)
         {
             exitBlockers.SetActive(true);   
             environmentLight.color = new Color32(0, 0, 0, 0);
+
             earth.GetComponent<MeshCollider>().enabled = false;
 
             gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 10.0f;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class thermoStatBehavior : MonoBehaviour
 {
+    public GameObject avatarHasFire;
 
     void Start()
     {
@@ -19,7 +20,11 @@ public class thermoStatBehavior : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        GetComponent<ThermoStatInfo>().thermoTemp = 0;
+        if (GetComponent<ThermoStatInfo>().thermoTemp == 5 && avatarHasFire.GetComponent<FireBehavior>().iAmTheFire == true)
+        {
+            GetComponent<ThermoStatInfo>().thermoTemp = 0;
+
+        }
 
     }
 

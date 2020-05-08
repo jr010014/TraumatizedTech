@@ -22,6 +22,7 @@ public class GrandClock : MonoBehaviour
     //public GameObject player;
 
     AudioSource clockChime;
+    public bool audioPlayed;
 
     public void Start()
     {
@@ -31,6 +32,7 @@ public class GrandClock : MonoBehaviour
         changesMade = false;
 
         clockChime = GetComponent<AudioSource>();
+        audioPlayed = false;
 
     }
 
@@ -59,9 +61,11 @@ public class GrandClock : MonoBehaviour
             changesMade = true;
         }
 
-        if(thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0 && audioPlayed == false)
         {
             clockChime.Play();
+
+            audioPlayed = true;
         }
 
     }

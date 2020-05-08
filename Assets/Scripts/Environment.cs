@@ -18,7 +18,7 @@ public class Environment : MonoBehaviour
 
     void Update()
     {
-        if (materialsSet == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        if (materialsSet == false && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp >= 0 && thermoStat.GetComponent<ThermoStatInfo>().thermoTemp < 5)
         {
             skyBoxShell.SetActive(true);
 

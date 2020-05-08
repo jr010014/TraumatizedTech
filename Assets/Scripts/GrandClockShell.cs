@@ -21,11 +21,10 @@ public class GrandClockShell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0)
+        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 0 )
         {
             //if touched tiggerering fireplace/traujma/seizing, then spiritual clock guide calls for you
-            heartbeat.Play();
-            Debug.Log("heartbeat");
+          
             clockLight.enabled = true;
         }
     }
@@ -36,7 +35,8 @@ public class GrandClockShell : MonoBehaviour
         {
             if (collider.gameObject.tag == "Player")
             {
-                
+                heartbeat.Play();
+                Debug.Log("heartbeat");
                 thermoStat.GetComponent<ThermoStatInfo>().thermoTemp = 1;       //finding clock/skirt during seizure increases your temp, brings life back to you
 
             }

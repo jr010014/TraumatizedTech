@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\FurnaceBehavior.cs" />
     <Compile Include="Assets\Scripts\GrandClock.cs" />
     <Compile Include="Assets\Scripts\GrandClockShell.cs" />
+    <Compile Include="Assets\Scripts\Growth.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Scripts\Seizure.cs" />
     <Compile Include="Assets\Scripts\ThermoStatInfo.cs" />
@@ -80,7 +81,10 @@
     <None Include="Assets\WorldMaterialsFree\WorldMatFree.shader" />
     <None Include="Assets\Nice Materials Pack 2\Shaders\PaintedWall.shader" />
     <None Include="Assets\Nice Materials Pack 2\Shaders\Stone Tile.shader" />
+    <None Include="Assets\laxer Assets\creek\Shaders\RunningWaterSimple.shader" />
     <None Include="Assets\Nice Materials Pack 2\Shaders\Lino.shader" />
+    <None Include="Assets\laxer Assets\creek\Shaders\HeightBlendx5.shader" />
+    <None Include="Assets\laxer Assets\creek\Shaders\RunningWater.shader" />
     <None Include="Assets\Nice Materials Pack 2\Shaders\Processed Leather.shader" />
     <None Include="Assets\Nice Materials Pack 2\Shaders\Cloth.shader" />
     <None Include="Assets\Nice Materials Pack 2\Shaders\Carpet.shader" />
