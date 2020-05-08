@@ -21,8 +21,6 @@ public class FireBehavior : MonoBehaviour
 
     public void transferFire(Collision collider)
     {
-        Debug.Log("line2");
-
         collider.gameObject.GetComponent<Light>().enabled = true;
         iAmTheFire = true;
     }

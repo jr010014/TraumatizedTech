@@ -10,7 +10,6 @@ public class GrandClockShell : MonoBehaviour
     public GameObject thermoStat;
     public Light clockLight;
 
-
     private void Start()
     {
         heartbeat = GetComponent<AudioSource>();
@@ -36,7 +35,6 @@ public class GrandClockShell : MonoBehaviour
             if (collider.gameObject.tag == "Player")
             {
                 heartbeat.Play();
-                Debug.Log("heartbeat");
                 thermoStat.GetComponent<ThermoStatInfo>().thermoTemp = 1;       //finding clock/skirt during seizure increases your temp, brings life back to you
 
             }

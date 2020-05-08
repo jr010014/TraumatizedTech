@@ -9,7 +9,17 @@ public class Growth : MonoBehaviour
     public GameObject bridge;
     public GameObject garden;
 
+    public GameObject thermoStat;
+
+    AudioSource growth;
+
+
     public GameObject escapeOnset;
+
+    public void Start()
+    {
+        growth = GetComponent<AudioSource>();
+    }
 
     public void OnCollisionEnter(Collision collider)
     {
@@ -20,6 +30,12 @@ public class Growth : MonoBehaviour
             backSkyWall.GetComponent<Renderer>().material = growthPainting;
             bridge.SetActive(true);
             garden.SetActive(true);
+
+            growth.Play();
+
+            thermoStat.GetComponent<ThermoStatInfo>().thermoTemp = 3;
+
+            
         }
     }
 }

@@ -10,6 +10,8 @@ public class Respawn : MonoBehaviour
    
     public bool escapeOnset; //determines if feetPainting has been set as new material for floors
     public bool seizureOnset;
+    public bool spiritGuideOnset;
+    public bool seizureOnset2;
     //public bool fireTouch;
 
     public GameObject earth;
@@ -30,6 +32,8 @@ public class Respawn : MonoBehaviour
     {
         escapeOnset = false;        //upon start of play, trauma did not occur
         seizureOnset = false;   //seizure has not yet occured
+        spiritGuideOnset = false;
+        seizureOnset2 = false;
         //fireTouch = false;
 
         spawnPointsArray = new Vector3[5]; //defining size of spawnPointsArray
@@ -61,44 +65,12 @@ public class Respawn : MonoBehaviour
     {
         if (gameObject.transform.position.y <= -200)      //if player falls off the edge
         {
-            if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 1)
-            {
-                if (escapeOnset == false && seizureOnset == true)        //if player discovered the "thermostat"/HeartOnAstickPainting/fireplace (managed in ThermoStatInfo Class)
-                {
-         
-                    gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 1.0f;
-                    gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 35f;
-
-                    feet.SetActive(true);
-
-                    escapeOnset = true;
-                    //earth.GetComponent<MeshCollider>().enabled = true;
-
-                }
-            }
-
             gameObject.transform.position = spawnPointsArray[Random.Range(0, 6)];    //If user falls off edge, respawn in one of the 5 assigned places, randomly
         }
 
-    
-
-        if (escapeOnset == true)
+        if (seizureOnset2 == true)
         {
-           earth.GetComponent<MeshCollider>().enabled = true;
-
-            thermoStat.GetComponent<ThermoStatInfo>().thermoTemp = 2;
-
-            foreach (GameObject wall in GameObject.FindGameObjectsWithTag("limbs")) //MOVE LATER
-            {
-                wall.GetComponent<Renderer>().material = limbsPainting;
-            }
-            //girls on wall help you regain footing
-            
-
-        }
-
-        if (seizureOnset == true)
-        {
+            seizureOnset = true;
             exitBlockers.SetActive(true);   
             environmentLight.color = new Color32(0, 0, 0, 0);
 
@@ -109,12 +81,51 @@ public class Respawn : MonoBehaviour
             gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 120f;
             gameObject.GetComponent<FirstPersonAIO>().jumpPower = 8.0f;
 
+            seizureOnset2 = false;
+
         }
 
         if(thermoStat.GetComponent<ThermoStatInfo>().thermoTemp >= 1)   //this occurs if they find the clock/skirt during the seizure
         {
             exitBlockers.SetActive(false);
         }
+
+        if (thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 1 && spiritGuideOnset == false)
+        {
+            earth.GetComponent<MeshCollider>().enabled = true;
+
+            if (spiritGuideOnset == false)
+            {
+                feet.SetActive(true);
+                spiritGuideOnset = true;
+                escapeOnset = true;
+
+            }
+        }
+
+        if (escapeOnset == true)
+        {
+            thermoStat.GetComponent<ThermoStatInfo>().thermoTemp = 2;
+
+            foreach (GameObject wall in GameObject.FindGameObjectsWithTag("limbs")) //MOVE LATER
+            {
+                wall.GetComponent<Renderer>().material = limbsPainting;
+            }
+            //girls on wall help you regain footing
+
+        }
+        
+        if(thermoStat.GetComponent<ThermoStatInfo>().thermoTemp == 3)
+        {
+            gameObject.GetComponent<FirstPersonAIO>().walkSpeed = 4.0f;
+            gameObject.GetComponent<FirstPersonAIO>().sprintSpeed = 9.0f;
+
+            gameObject.GetComponent<FirstPersonAIO>().verticalRotationRange = 170f;
+            gameObject.GetComponent<FirstPersonAIO>().jumpPower = 5.5f;
+
+        }
+
+
 
     }
     }

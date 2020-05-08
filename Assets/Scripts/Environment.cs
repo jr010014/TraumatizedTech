@@ -7,6 +7,8 @@ public class Environment : MonoBehaviour
     public GameObject skyBoxShell;
     public GameObject thermoStat;
     public GameObject houseStruct;
+    public GameObject familyRoom;
+    public GameObject kitchen;
 
     public bool materialsSet;
 
@@ -25,6 +27,16 @@ public class Environment : MonoBehaviour
             foreach(Transform houseStructChild in houseStruct.transform)
             {
                 houseStructChild.GetComponent<Renderer>().material = null;
+            }
+
+            foreach (Transform familyRoomChild in familyRoom.transform)
+            {
+                familyRoomChild.GetComponent<Renderer>().material = null;
+            }
+
+            foreach (Transform kitchenChild in kitchen.transform)
+            {
+                kitchenChild.GetComponent<Renderer>().material = null;
             }
 
             materialsSet = true;
